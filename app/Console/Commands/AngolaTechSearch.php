@@ -2,7 +2,9 @@
 
 namespace App\Console\Commands;
 
+use App\Actions\SearchCompanies;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\View;
 
 class AngolaTechSearch extends Command
 {
@@ -26,7 +28,9 @@ class AngolaTechSearch extends Command
      * @return int
      */
     public function handle()
-    {
-        echo 'Command::SUCCESS;';
+    {    
+        //$this->info('Algo se passa');
+        $crawler = app(SearchCompanies::class)->handle();
+        return $crawler;
     }
 }

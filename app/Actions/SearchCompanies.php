@@ -25,7 +25,7 @@ class SearchCompanies
     public function handle()
     {
         $crawler = $this->gouteCliente->request('GET', $this->search)
-               ->filter('body')->children('div.MjjYud')->each(function(Crawler $node){
+               ->filter('body')->children('div.MjjYud')->each(function($node){
                      return $node->text();
                });
 
